@@ -1,0 +1,6 @@
+In this Dockerfile:
+
+FROM python:3.9-slim: This line specifies that we're basing our image on the official Python image with tag 3.9-slim, which includes a minimal Python environment.
+WORKDIR /app: This line sets the working directory inside the container to /app.
+COPY hello_world.py /app/hello_world.py: This line copies the hello_world.py file from the local directory into the /app directory in the container.
+CMD ["python", "hello_world.py"]: This line specifies the command to run when the container starts. It runs the Python script hello_world.py using the python interpreter.
