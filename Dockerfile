@@ -7,5 +7,7 @@ WORKDIR /
 # Copy the Python script into the container
 COPY app.py app.py
 
+EXPOSE 8082
+
 # Run the Python script when the container starts
 CMD ["python", "app.py"]
