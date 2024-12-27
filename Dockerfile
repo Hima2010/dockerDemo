@@ -2,12 +2,16 @@
 FROM python:3.9-slim
 
 # Set the working directory in the container
-WORKDIR /
+WORKDIR /app
 
-# Copy the Python script into the container
-COPY app.py app.py
+# Copy the current directory contents into the container
+COPY . /app
 
-EXPOSE 8082
+# Install Flask
+RUN pip install flask
 
-# Run the Python script when the container starts
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Define the command to run the app
 CMD ["python", "app.py"]
