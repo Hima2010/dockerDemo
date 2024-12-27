@@ -1,10 +1,10 @@
-class HelloWorld:
-    def say_hello(self):
-        """Prints 'Hello, World!'"""
-        print("Hello, World!")
+from flask import Flask
 
-# Create an instance of the HelloWorld class
-hello = HelloWorld()
+app = Flask(__name__)
 
-# Call the say_hello method to print the greeting
-hello.say_hello()
+@app.route('/')
+def home():
+    return "Hello, Flask on Docker!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
